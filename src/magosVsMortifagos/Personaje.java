@@ -4,28 +4,51 @@ import java.util.List;
 
 public abstract class Personaje {
     protected String nombre;
-    protected int nivelMagia;
     protected double puntosVidaMax;
     protected double puntosVida;
+    protected double defensa;
     protected List<Hechizo> hechizos;
     protected Varita varita;
     protected boolean tieneVarita = true;
+    protected Dado dado;
     
-    public Personaje(String nombre, int nivelMagia, double puntosVida, Varita varita) {
+    public Personaje(String nombre, double puntosVida, Varita varita, Dado dado) {
 		this.nombre = nombre;
-		this.nivelMagia = nivelMagia;
 		this.puntosVida = puntosVidaMax = puntosVida;
+		this.defensa = 1;
 		this.varita = varita;
+		this.dado = dado;
     }
     
+    public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
 
-    public void lanzarHechizo(Hechizo hechizo, Personaje objetivo) {
-        if (!tieneVarita) {
-            System.out.println(nombre + " no puede lanzar hechizos porque no tiene su varita.");
-            return;
-        }
-        hechizo.ejecutar(objetivo);
+    public boolean lanzarDado() {
+    	int lanzamiento = this.dado.lanzar();
+    	System.out.println("Ha salido " + lanzamiento);
+    	if(lanzamiento == 1) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+    		
     }
+    
+    public double getDefensa() {
+    	return this.defensa;
+    }
+    
+    public void aumentarDefensa(double armadura) {
+    	this.defensa += armadura;
+    }
+    
+    public Varita getVarita() {
+        return varita;
+    }
+
+    public void setVarita(Varita varita) {
+        this.varita = varita;
+    }
+    
     
     public void reducirPuntosDeVida(double cantidad) {
     	this.puntosVida -= cantidad;

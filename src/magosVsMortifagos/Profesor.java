@@ -1,7 +1,7 @@
 package magosVsMortifagos;
 
 public class Profesor extends Mago{
-	public Profesor(String nombre, int nivelMagia, double puntosVida) {
-		super(nombre, nivelMagia, puntosVida, Varita.PROFESIONAL);
+	public Profesor(String nombre, double puntosVida) {
+		super(nombre, puntosVida, Varita.PROFESIONAL, Dado.CUATROCARAS);
 	}
 }

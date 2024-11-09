@@ -1,6 +1,6 @@
 package magosVsMortifagos;
-public class Seguidor extends Mago{
-    public Seguidor(String nombre,int nivelMagia,Double puntosVida){
-        super(nombre,nivelMagia,puntosVida,Varita.EXPERTO);
+public class Seguidor extends Mortifago {
+    public Seguidor(String nombre, double puntosVida){
+        super(nombre, puntosVida, Varita.EXPERTO, Dado.SEISCARAS);
     }
 }

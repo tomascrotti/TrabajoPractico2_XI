@@ -1,7 +1,7 @@
 package magosVsMortifagos;
 
 public enum Varita {
-	PRINCIPIANTE("Acebo",1,1.2), PROFESIONAL("Vid",1.5,1.5), EXPERTO("Sauco",2,1.7), LEGENDARIA("Roble oscuro", 2, 2);
+	PRINCIPIANTE("Acebo",1,0.2), PROFESIONAL("Vid",1.5,0.3), EXPERTO("Roble oscuro",2,0.4), LEGENDARIA("Sauco", 2, 0.6);
 	
 	final String nombre;
 	final double multAtaq;
