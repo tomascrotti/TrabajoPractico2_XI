@@ -8,8 +8,14 @@ public class AvadaKedavra implements Hechizo {
 	@Override
     public void ejecutar(Personaje lanzador, Personaje objetivo) {
         double danioTotal = danioBase * lanzador.getVarita().multAtaq * objetivo.getDefensa();
-        System.out.println(objetivo.getNombre() + " ha recibido " + danioTotal + " Puntos de daño");
+        System.out.println("\n-----------------\n" 
+        		+ objetivo.getNombre() + " ha recibido " + danioTotal + " Puntos de daño");
         objetivo.reducirPuntosDeVida(danioTotal);
+        if (objetivo.estaVivo()) {
+			System.out.println(objetivo.getNombre() + " puntos de salud restantes: " + objetivo.getVida());
+		} else {
+			System.out.println(objetivo.getNombre() + " ha sido derrotado por " + lanzador.getNombre());
+		}
     }
 
 	public String getNombre() {

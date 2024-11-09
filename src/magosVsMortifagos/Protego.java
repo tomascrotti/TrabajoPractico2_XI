@@ -6,8 +6,10 @@ public class Protego implements Hechizo {
 	
 	@Override
 	public void ejecutar(Personaje lanzador, Personaje objetivo) {
+		System.out.println("Puntos de defensa actuales: " + objetivo.getDefensa());
 		double nuevaDefensa = -lanzador.getVarita().multDefe;
 		objetivo.aumentarDefensa(nuevaDefensa);
+		System.out.println("Puntos de defensa nuevos: " + objetivo.getDefensa());
 	}
 
 	public String getNombre() {

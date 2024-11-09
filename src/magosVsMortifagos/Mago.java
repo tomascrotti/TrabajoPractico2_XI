@@ -11,7 +11,7 @@ public class Mago extends Personaje {
             System.out.println(nombre + " no puede lanzar hechizos porque no tiene su varita.");
             return;
         }
-		System.out.println(this.getNombre() + " ha lanzado " + hechizo.getNombre());
+		System.out.println("\n ---- \n" + this.getNombre() + " ha lanzado " + hechizo.getNombre());
 		hechizo.ejecutar(this, objetivo);
 	}
 	

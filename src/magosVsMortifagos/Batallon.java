@@ -19,9 +19,26 @@ public class Batallon {
         this.hechizosUtilizados = new HashSet<>();
     }
 
-    public void atacar(Batallon batallonMortifagos) {
-
+    public void atacar(Batallon otroBatallon) {
+    	for(Personaje atacante : personajes) {
+    		Personaje objetivo = otroBatallon.obtenerPersonajeSaludable();
+    		if(objetivo != null) {
+    			atacante.lanzarHechizo(atacante.hechizos.get(0),objetivo);
+    			//HABRÍA QUE CAMBIAR QUE NO SOLO ATAQUE SINO QUE DECIDA
+    			// Y ALGUNA MANERA DE AGREGARLE HECHIZOS AL ArrayList
+    		}
+    	}
     }
+    
+    private Personaje obtenerPersonajeSaludable() {
+    	for(Personaje p : personajes) {
+    		if(p.estaVivo()) {
+    			return p;
+    		}
+    	}
+    	return null;
+    }
+    
 
     public boolean tienePersonajesSaludables() {
         return personajes.isEmpty();

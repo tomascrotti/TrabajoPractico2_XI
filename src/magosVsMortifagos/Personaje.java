@@ -20,6 +20,20 @@ public abstract class Personaje {
 		this.dado = dado;
     }
     
+	protected String getNombre() {
+		return this.nombre;
+	}
+    
+    public double getVida() {
+		return puntosVida;
+	}
+    
+    public boolean estaVivo() {
+    	if(this.puntosVida > 0)
+    		return true;
+    	return false;
+    }
+    
     public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
 
     public boolean lanzarDado() {
@@ -48,8 +62,7 @@ public abstract class Personaje {
     public void setVarita(Varita varita) {
         this.varita = varita;
     }
-    
-    
+        
     public void reducirPuntosDeVida(double cantidad) {
     	this.puntosVida -= cantidad;
     }
@@ -67,8 +80,6 @@ public abstract class Personaje {
         System.out.println(nombre + " ha recuperado su varita y puede lanzar hechizos nuevamente.");
     }
 
-	protected String getNombre() {
-		return this.nombre;
-	}
+	
     
 }
