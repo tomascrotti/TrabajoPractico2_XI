@@ -1,5 +1,7 @@
 package magosVsMortifagos;
 
+import java.util.Random;
+
 public class BatallaMagosVsMortifagos {
 	  public void iniciarBatalla() {
 	    Batallon batallonMagos = new Batallon();
