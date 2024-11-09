@@ -9,6 +9,7 @@ public abstract class Personaje {
     protected double puntosVida;
     protected List<Hechizo> hechizos;
     protected Varita varita;
+    protected boolean tieneVarita = true;
     
     public Personaje(String nombre, int nivelMagia, double puntosVida, Varita varita) {
 		this.nombre = nombre;
@@ -18,15 +19,33 @@ public abstract class Personaje {
     }
     
 
-    public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
+    public void lanzarHechizo(Hechizo hechizo, Personaje objetivo) {
+        if (!tieneVarita) {
+            System.out.println(nombre + " no puede lanzar hechizos porque no tiene su varita.");
+            return;
+        }
+        hechizo.ejecutar(objetivo);
+    }
     
-    public void recibirDmg(int danio) {
-      puntosVida -= danio;
-      if (puntosVida <= 0) {
-          puntosVida = 0;
-          System.out.println(nombre + " ha sido derrotado.");
-      } else {
-          System.out.println(nombre + " ahora tiene " + puntosVida + " puntos de salud.");
-      }
-  }
+    public void reducirPuntosDeVida(double cantidad) {
+    	this.puntosVida -= cantidad;
+    }
+    
+    public boolean tieneVarita() {
+    	return tieneVarita;
+    }
+    
+    public void setTieneVarita(boolean tieneVarita) {
+        this.tieneVarita = tieneVarita;
+    }
+    
+    public void recuperarVarita() {
+        this.tieneVarita = true;
+        System.out.println(nombre + " ha recuperado su varita y puede lanzar hechizos nuevamente.");
+    }
+
+	protected String getNombre() {
+		return this.nombre;
+	}
+    
 }

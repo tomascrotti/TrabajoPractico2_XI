@@ -8,7 +8,6 @@ public class Mortifago extends Personaje {
 
 	@Override
 	public void lanzarHechizo(Hechizo hechizo, Personaje objetivo) {
-		
-	}
-	
+		hechizo.ejecutar(objetivo);
+	}	
 }

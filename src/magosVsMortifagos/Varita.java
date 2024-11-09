@@ -9,7 +9,7 @@ public enum Varita {
 	
 	Varita(String nombre, double multAtaq, double multDefe){
 		this.nombre = nombre;
-		this.multDefe = multDefe;
 		this.multAtaq = multAtaq;
+		this.multDefe = multDefe;
 	}
 }

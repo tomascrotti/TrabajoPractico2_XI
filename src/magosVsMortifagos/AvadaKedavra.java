@@ -1,10 +1,18 @@
 package magosVsMortifagos;
 
 public class AvadaKedavra implements Hechizo {
+	private String nombre = "Avada Kedavra";
+	private double danioBase = 25;
+
 	@Override
-	public void ejecutar(Personaje lanzador, Personaje objetivo) {
-		int danio = 50 ;
-		objetivo.recibirDmg(50);
-		System.out.println(lanzador.nombre + " ha lanzado Avada Kedavra a " + objetivo.nombre + " y le ha quitado 50 puntos de vida.");
+    public void ejecutar(Personaje objetivo) {
+        // Lógica para infligir daño letal
+        System.out.println(objetivo.getNombre() + " ha recibido " + danioBase + " Puntos de daño");
+        objetivo.reducirPuntosDeVida(danioBase); // Reduce la vida a cero
+    }
+
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return nombre;
 	}
 }
