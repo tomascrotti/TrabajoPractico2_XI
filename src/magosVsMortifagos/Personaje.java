@@ -2,7 +2,7 @@ package magosVsMortifagos;
 
 import java.util.List;
 
-public abstract class Personaje {
+public class Personaje {
     protected String nombre;
     protected int nivelMagia;
     protected double puntosVidaMax;
@@ -18,7 +18,9 @@ public abstract class Personaje {
     }
     
 
-    public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
+    public void lanzarHechizo(Hechizo hechizo, Personaje objetivo) {
+    	
+    }
     
     public void recibirDaño(int danio) {
       puntosVida -= danio;
