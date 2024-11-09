@@ -10,7 +10,7 @@ public abstract class Personaje {
     protected List<Hechizo> hechizos;
     protected Varita varita;
     
-    public Personaje(String nombre, int nivelMagia, int puntosVida, Varita varita) {
+    public Personaje(String nombre, int nivelMagia, double puntosVida, Varita varita) {
 		this.nombre = nombre;
 		this.nivelMagia = nivelMagia;
 		this.puntosVida = puntosVida;
@@ -18,6 +18,7 @@ public abstract class Personaje {
 		this.varita = varita;
     }
     
+
     public void lanzarHechizo(Hechizo hechizo, Personaje objetivo) {
 		hechizo.ejecutar(objetivo);
 	}
