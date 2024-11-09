@@ -1,25 +1,16 @@
 package magosVsMortifagos;
 
-public class Varita {
-	private String nombre;
-	private double multAtaq;
-	private double multDefe;
+public enum Varita {
+	PRINCIPIANTE("Acebo",1,1.2), PROFESIONAL("Vid",1.5,1.5), EXPERTO("Sauco",2,1.7);
 	
-	public Varita(String nombre, double multAtaq, double multDefe) {
+	final String nombre;
+	final double multAtaq;
+	final double multDefe;
+	
+	Varita(String nombre, double multAtaq, double multDefe){
 		this.nombre = nombre;
-		this.multAtaq = multAtaq;
 		this.multDefe = multDefe;
+		this.multAtaq = multAtaq;
 	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public double getMultAtaq() {
-		return multAtaq;
-	}
-
-	public double getMultDefe() {
-		return multDefe;
-	}
+		
 }
