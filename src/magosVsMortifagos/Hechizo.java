@@ -1,5 +1,5 @@
 package magosVsMortifagos;
 
 public interface Hechizo {
-	void ejecutar(Personaje objetivo);
+	void ejecutar(Personaje lanzador, Personaje objetivo);
 }
