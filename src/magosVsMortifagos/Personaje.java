@@ -13,14 +13,20 @@ public abstract class Personaje {
     public Personaje(String nombre, int nivelMagia, double puntosVida, Varita varita) {
 		this.nombre = nombre;
 		this.nivelMagia = nivelMagia;
-		this.puntosVida = puntosVida;
-		this.puntosVidaMax = puntosVida;
+		this.puntosVida = puntosVidaMax = puntosVida;
 		this.varita = varita;
     }
     
 
-    public void lanzarHechizo(Hechizo hechizo, Personaje objetivo) {
-		hechizo.ejecutar(objetivo);
-	}
+    public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
     
+    public void recibirDaño(int danio) {
+      puntosVida -= danio;
+      if (puntosVida <= 0) {
+          puntosVida = 0;
+          System.out.println(nombre + " ha sido derrotado.");
+      } else {
+          System.out.println(nombre + " ahora tiene " + puntosVida + " puntos de salud.");
+      }
+  }
 }
