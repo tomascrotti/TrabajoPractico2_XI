@@ -1,7 +1,12 @@
-package magosVsMortifagos;
+package personajes;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import hechizos.Hechizo;
+import magosVsMortifagos.Dado;
+import magosVsMortifagos.HechizoFactory;
+import magosVsMortifagos.Varita;
 
 public class Seguidor extends Mortifago {
 	

@@ -1,6 +1,10 @@
-package magosVsMortifagos;
+package personajes;
 
 import java.util.ArrayList;
+
+import hechizos.Hechizo;
+import magosVsMortifagos.Dado;
+import magosVsMortifagos.Varita;
 public abstract class Personaje {
     protected String nombre;
     protected double puntosVidaMax;
@@ -21,7 +25,7 @@ public abstract class Personaje {
 		this.dado = dado;
     }
     
-	protected String getNombre() {
+	public String getNombre() {
 		return this.nombre;
 	}
     
@@ -45,8 +49,9 @@ public abstract class Personaje {
     	return this.dado.lanzar();
     }
     
-    protected void quitarVarita(Personaje objetivo) {
-    	
+    public void quitarVarita(Personaje objetivo) {
+    	if(this.lanzarDado() == 1)
+    		objetivo.setTieneVarita(false);
     }
 
     public Varita getVarita() {
@@ -62,6 +67,11 @@ public abstract class Personaje {
     }
     
     public void setTieneVarita(boolean tieneVarita) {
+    	if(this.tieneVarita()) {
+    		System.out.println(this.getNombre() + "ha perdido su varita");
+    	} else {
+    		System.out.println(this.getNombre() + "ha recuperado su varita");
+    	}    	
     	this.tieneVarita = tieneVarita;
     }
  

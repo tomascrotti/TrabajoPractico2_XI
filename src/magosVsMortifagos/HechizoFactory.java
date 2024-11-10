@@ -1,5 +1,11 @@
 package magosVsMortifagos;
 
+import hechizos.AvadaKedavra;
+import hechizos.Expelliarmus;
+import hechizos.Hechizo;
+import hechizos.Protego;
+import hechizos.Sectumsempra;
+
 public class HechizoFactory {
 	
 	public static Hechizo obtenerHechizo(String nombreHechizo) {

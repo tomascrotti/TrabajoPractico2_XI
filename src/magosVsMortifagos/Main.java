@@ -1,6 +1,7 @@
 package magosVsMortifagos;
 
-import org.jpl7.*;
+import personajes.Auror;
+import personajes.Seguidor;
 
 public class Main {
 
@@ -9,7 +10,7 @@ public class Main {
 //		System.out.println("       ███    ███  █████   ██████   ██████  ███████     ██    ██ ███████\r\n"
 //				         + "       ████  ████ ██   ██ ██       ██    ██ ██          ██    ██ ██     \r\n"
 //				         + "       ██ ████ ██ ███████ ██   ███ ██    ██ ███████     ██    ██ ███████\r\n"
-//          				 + "       ██  ██  ██ ██   ██ ██    ██ ██    ██      ██      ██  ██       ██\r\n"
+//          			 + "       ██  ██  ██ ██   ██ ██    ██ ██    ██      ██      ██  ██       ██\r\n"
 //				         + "       ██      ██ ██   ██  ██████   ██████  ███████       ████   ███████\r\n"
 //				         + "                                                                 \r\n"
 //				         + "███    ███  ██████  ██████  ████████ ██ ███████  █████   ██████   ██████  ███████\r\n"
@@ -30,12 +31,17 @@ public class Main {
 //		}
 //		batalla.iniciarBatalla(batallonMagos,batallonMortifagos);
 		
-		// Cargar el archivo Prolog
-        Query q1 = new Query("consult", new Term[] {new Atom("test.pl")});
-        System.out.println("consult('test.pl') " + (q1.hasSolution() ? "succeeded" : "failed"));
-
-        // Realizar la consulta
-        Query q2 = new Query("child_of", new Term[] {new Atom("joe"), new Atom("ralf")});
-        System.out.println("child_of(joe,ralf) is " + (q2.hasSolution() ? "provable" : "not provable"));
+//		// Cargar el archivo Prolog
+//        Query q1 = new Query("consult", new Term[] {new Atom("test.pl")});
+//        System.out.println("consult('test.pl') " + (q1.hasSolution() ? "succeeded" : "failed"));
+//
+//        // Realizar la consulta
+//        Query q2 = new Query("child_of", new Term[] {new Atom("joe"), new Atom("ralf")});
+//        System.out.println("child_of(joe,ralf) is " + (q2.hasSolution() ? "provable" : "not provable"));
+		
+		Auror seg = new Auror("pepe");
+		Seguidor seg2 = new Seguidor("pepe2");
+		seg.lanzarHechizo(HechizoFactory.obtenerHechizo("Expelliarmus"), seg2);
+		seg2.lanzarHechizo(HechizoFactory.obtenerHechizo("Avada kedavra"), seg);
 	}
 }

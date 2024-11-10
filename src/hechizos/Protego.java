@@ -1,10 +1,11 @@
-package magosVsMortifagos;
+package hechizos;
+
+import personajes.Personaje;
 
 public class Protego implements Hechizo {
 	
 	private String nombre = "Protego";
-	private int duracion;
-	
+		
 	@Override
 	public void ejecutar(Personaje lanzador, Personaje objetivo) {
 		if(!objetivo.tieneProtego()) {

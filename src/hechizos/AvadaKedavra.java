@@ -1,4 +1,6 @@
-package magosVsMortifagos;
+package hechizos;
+
+import personajes.Personaje;
 
 public class AvadaKedavra implements Hechizo {
 	
@@ -11,7 +13,7 @@ public class AvadaKedavra implements Hechizo {
 		}
         System.out.println("\n-----------------\n" 
         		+ objetivo.getNombre() + " ha recibido Avada Kedavra\n.");
-        objetivo.reducirPuntosDeVida(objetivo.puntosVida);
+        objetivo.reducirPuntosDeVida(objetivo.getVida());
 		System.out.println(objetivo.getNombre() + " ha sido derrotado por " + lanzador.getNombre());
     }
 

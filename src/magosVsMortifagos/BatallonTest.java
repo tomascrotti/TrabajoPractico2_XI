@@ -3,6 +3,11 @@ package magosVsMortifagos;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import hechizos.AvadaKedavra;
+import hechizos.Hechizo;
+import personajes.Personaje;
+
 import java.util.List;
 
 public class BatallonTest {
@@ -12,13 +17,10 @@ public class BatallonTest {
 
 	@BeforeEach
 	void setup() {
-		batallonMagos = new Batallon();
-		batallonMortifagos = new Batallon();
-
-		for (int i = 0; i < 3; i++) {
-			batallonMagos.agregarPersonaje(PersonajeFactory.crearMago());
-			batallonMortifagos.agregarPersonaje(PersonajeFactory.crearMortifago());
-		}
+		batallonMagos = new BatallonMagos();
+		batallonMortifagos = new BatallonMortifagos();
+		batallonMagos.generarBatallon(3);
+		batallonMortifagos.generarBatallon(1);
 	}
 
 	@Test

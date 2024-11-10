@@ -5,7 +5,7 @@ public enum Varita {
 	EXPERTO("Roble oscuro",2), LEGENDARIA("Sauco",2);
 	
 	final String nombre;
-	final double multAtaq;
+	private final double multAtaq;
 		
 	Varita(String nombre, double multAtaq) {
 		this.nombre = nombre;
@@ -15,6 +15,10 @@ public enum Varita {
 	@Override
 	public String toString() {
 		return "Varita: " + this.nombre
-				+ "\n     - Multiplicador de ataque: x" + this.multAtaq; 
+				+ "\n     - Multiplicador de ataque: x" + this.getMultAtaq(); 
+	}
+
+	public double getMultAtaq() {
+		return multAtaq;
 	}
 }

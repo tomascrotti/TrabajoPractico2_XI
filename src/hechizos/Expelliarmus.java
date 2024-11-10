@@ -1,12 +1,19 @@
-package magosVsMortifagos;
+package hechizos;
+
+import personajes.Personaje;
 
 public class Expelliarmus implements Hechizo {
 	
 	private String nombre = "Expelliarmus";
 	
     public void ejecutar(Personaje lanzador, Personaje objetivo) {
-        if(objetivo.tieneVarita())
-        	lanzador.quitarVarita(objetivo);
+        if(objetivo.tieneVarita()) {
+        	lanzador.quitarVarita(objetivo);	
+        } else {
+        	System.out.println("\n" + objetivo.getNombre() + " no tenia varita!");
+        	return;
+        }
+        
         if(objetivo.tieneVarita()) {
         	System.out.println("\n" + lanzador.getNombre() + " ha fallado Expelliarmus!");
         } else {

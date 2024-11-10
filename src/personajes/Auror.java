@@ -1,15 +1,21 @@
-package magosVsMortifagos;
+package personajes;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Estudiante extends Mago {
-	private static ArrayList<Hechizo> hechizos = generarHechizosIniciales();
+import hechizos.Hechizo;
+import magosVsMortifagos.Dado;
+import magosVsMortifagos.HechizoFactory;
+import magosVsMortifagos.Varita;
 
-	public Estudiante(String nombre) {
-		super(nombre, 50, 1, hechizos, Varita.PRINCIPIANTE, Dado.SEISCARAS);
+public class Auror extends Mago {
+	
+	private static ArrayList<Hechizo> hechizos = generarHechizosIniciales();
+	
+	public Auror (String nombre) {
+        super(nombre, 125, 4, hechizos, Varita.EXPERTO, Dado.DOSCARAS);
 	}
-    
+	
     private static ArrayList<Hechizo> generarHechizosIniciales() {
     	ArrayList<Hechizo> listaHechizos = new ArrayList<>();
         listaHechizos.add(HechizoFactory.obtenerHechizo("avada kedavra"));

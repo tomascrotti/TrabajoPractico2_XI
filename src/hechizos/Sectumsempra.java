@@ -1,4 +1,6 @@
-package magosVsMortifagos;
+package hechizos;
+
+import personajes.Personaje;
 
 public class Sectumsempra implements Hechizo{
 	private String nombre = "Sectumsempra";
@@ -11,7 +13,7 @@ public class Sectumsempra implements Hechizo{
 			objetivo.setProtegido(false);
 			return;
 		}
-		double danioTotal = danioBase * lanzador.getVarita().multAtaq;
+		double danioTotal = danioBase * lanzador.getVarita().getMultAtaq();
         System.out.println("\n-----------------\n" 
         		+ objetivo.getNombre() + " ha recibido Sectumsempra\n.");
         System.out.println("\n-----------------\n" 
