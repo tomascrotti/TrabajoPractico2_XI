@@ -2,6 +2,7 @@ package magosVsMortifagos;
 
 import personajes.Mortifago;
 import personajes.Personaje;
+import personajes.PersonajeFactory;
 
 public class BatallonMortifagos extends Batallon {
 	@Override

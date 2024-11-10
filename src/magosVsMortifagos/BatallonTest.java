@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import hechizos.AvadaKedavra;
 import hechizos.Hechizo;
+import hechizos.HechizoFactory;
 import personajes.Personaje;
 
 import java.util.List;

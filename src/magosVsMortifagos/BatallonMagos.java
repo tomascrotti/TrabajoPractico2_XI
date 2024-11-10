@@ -2,6 +2,7 @@ package magosVsMortifagos;
 
 import personajes.Mago;
 import personajes.Personaje;
+import personajes.PersonajeFactory;
 
 public class BatallonMagos extends Batallon {
 	

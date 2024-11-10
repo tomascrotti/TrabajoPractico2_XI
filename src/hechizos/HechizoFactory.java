@@ -1,10 +1,4 @@
-package magosVsMortifagos;
-
-import hechizos.AvadaKedavra;
-import hechizos.Expelliarmus;
-import hechizos.Hechizo;
-import hechizos.Protego;
-import hechizos.Sectumsempra;
+package hechizos;
 
 public class HechizoFactory {
 	

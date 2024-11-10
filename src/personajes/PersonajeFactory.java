@@ -1,13 +1,6 @@
-package magosVsMortifagos;
+package personajes;
 
 import java.util.Random;
-
-import personajes.Auror;
-import personajes.Comandante;
-import personajes.Estudiante;
-import personajes.Personaje;
-import personajes.Profesor;
-import personajes.Seguidor;
 
 public class PersonajeFactory {
 		

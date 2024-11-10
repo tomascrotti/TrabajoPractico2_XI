@@ -1,5 +1,6 @@
 package magosVsMortifagos;
 
+import hechizos.HechizoFactory;
 import personajes.Auror;
 import personajes.Seguidor;
 
