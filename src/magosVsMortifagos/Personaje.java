@@ -34,6 +34,10 @@ public abstract class Personaje {
     		return true;
     	return false;
     }
+    
+    public ArrayList<Hechizo> getHechizos() {
+        return this.hechizos;
+    }
         
     public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
 

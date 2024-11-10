@@ -47,6 +47,8 @@ public class Batallon {
     
     private Personaje seleccionarObjetivo() {
         List<Personaje> personajesSaludables = personajes.stream().filter(p -> p.puntosVida > 0).toList();
+        if(personajesSaludables.isEmpty())
+        	return null;
         return personajesSaludables.get(new Random().nextInt(personajesSaludables.size()));
     }
     
@@ -56,6 +58,10 @@ public class Batallon {
 
     public void agregarPersonaje(Personaje p) {
         personajes.add(p);
+    }
+
+    public List<Personaje> getPersonajes() {
+        return personajes;
     }
 
 }
