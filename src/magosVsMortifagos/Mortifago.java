@@ -1,9 +1,11 @@
 package magosVsMortifagos;
 
+import java.util.List;
+
 public class Mortifago extends Personaje {
 
-	public Mortifago(String nombre, double puntosVida, Varita varita, Dado dado) {
-		super(nombre, puntosVida, varita, dado);
+	public Mortifago(String nombre, double puntosVida, int nivelDeMagia, List<Hechizo> hechizos, Varita varita, Dado dado) {
+		super(nombre, puntosVida, nivelDeMagia, hechizos, varita, dado);
 	}
 
 	@Override

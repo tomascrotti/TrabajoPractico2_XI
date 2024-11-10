@@ -4,10 +4,7 @@ import java.util.Random;
 
 public class PersonajeFactory {
 		
-    public static Personaje crearMago() {
-    	
-    	
-    	
+    public static Personaje crearMago() {   	
     	Random rand = new Random();
     	return switch (rand.nextInt(3) + 1) {
 	    	case 1 -> new Estudiante("Estudiante");

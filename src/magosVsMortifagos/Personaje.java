@@ -6,16 +6,19 @@ public abstract class Personaje {
     protected String nombre;
     protected double puntosVidaMax;
     protected double puntosVida;
+    protected int nivelDeMagia;
     protected double defensa;
     protected List<Hechizo> hechizos;
     protected Varita varita;
     protected boolean tieneVarita = true;
     protected Dado dado;
     
-    public Personaje(String nombre, double puntosVida, Varita varita, Dado dado) {
+    public Personaje(String nombre, double puntosVida, int nivelDeMagia, List<Hechizo> hechizos, Varita varita, Dado dado) {
 		this.nombre = nombre;
 		this.puntosVida = puntosVidaMax = puntosVida;
+		this.nivelDeMagia = nivelDeMagia;
 		this.defensa = 1;
+		this.hechizos = hechizos;
 		this.varita = varita;
 		this.dado = dado;
     }
