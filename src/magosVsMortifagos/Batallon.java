@@ -49,7 +49,7 @@ public class Batallon {
     } 
 
     public boolean tienePersonajesSaludables() {
-        return personajes.isEmpty();
+        return !personajes.isEmpty();
     }
 
     public void agregarPersonaje(Personaje p) {
