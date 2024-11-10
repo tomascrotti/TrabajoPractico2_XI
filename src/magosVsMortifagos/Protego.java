@@ -14,5 +14,10 @@ public class Protego implements Hechizo {
 
 	public String getNombre() {
 		return nombre;
-	}	
+	}
+	
+	@Override
+	public String toString() {
+		return "Protego - Aumenta la defensa\n";
+	}
 }

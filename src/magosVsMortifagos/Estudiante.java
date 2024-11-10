@@ -12,9 +12,9 @@ public class Estudiante extends Mago {
     
     private static List<Hechizo> generarHechizosIniciales() {
         List<Hechizo> listaHechizos = new ArrayList<>();
+        listaHechizos.add(HechizoFactory.obtenerHechizo("avada kedavra"));
         listaHechizos.add(HechizoFactory.obtenerHechizo("expelliarmus"));
         listaHechizos.add(HechizoFactory.obtenerHechizo("protego"));
-        listaHechizos.add(HechizoFactory.obtenerHechizo("avada kedavra"));
         
         return listaHechizos;
     }

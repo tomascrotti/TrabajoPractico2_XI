@@ -22,4 +22,9 @@ public class AvadaKedavra implements Hechizo {
 		// TODO Auto-generated method stub
 		return nombre;
 	}
+	
+	public String toString() {
+		return "Avada Kedavra - Ataca con un gran daño\n";
+	}
+	
 }

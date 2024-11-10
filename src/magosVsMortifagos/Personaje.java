@@ -41,7 +41,6 @@ public abstract class Personaje {
 
     public boolean lanzarDado() {
     	int lanzamiento = this.dado.lanzar();
-    	System.out.println("Ha salido " + lanzamiento);
     	if(lanzamiento == 1) {
     		return true;
     	} else {
@@ -85,7 +84,7 @@ public abstract class Personaje {
 
 	@Override
 	public String toString() {
-		return nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax
+		return "\n" + nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax
 				+ "\n - Defensa: " + defensa
 				+ "\n - Hechizos Disponibles:\n" + hechizos
 				+ "\n - " + varita

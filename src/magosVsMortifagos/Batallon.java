@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 public class Batallon {
@@ -21,33 +22,34 @@ public class Batallon {
     
     public void listarPersonajes() {
     	for(Personaje p : personajes) {
-    		System.out.println("\n" + p);
+    		System.out.println(p);
     	}
     }
 
     public void atacar(Batallon otroBatallon) {
     	for(Personaje atacante : personajes) {
-    		Personaje objetivo = otroBatallon.obtenerPersonajeSaludable();
+    		Personaje objetivo = otroBatallon.seleccionarObjetivo();
     		if(objetivo != null) {
     			atacante.lanzarHechizo(atacante.hechizos.get(0),objetivo);
     			if(!objetivo.estaVivo()) {
-    				
+    				otroBatallon.haSidoDerrotado(objetivo);
     			}
-    			//HABRÍA QUE CAMBIAR QUE NO SOLO ATAQUE SINO QUE DECIDA
-    			// Y ALGUNA MANERA DE AGREGARLE HECHIZOS AL ArrayList
+    			// HABRÍA QUE CAMBIAR QUE NO SOLO ATAQUE SINO QUE DECIDA
+    			// CON PROLOG
     		}
     	}
     }
     
-    private Personaje obtenerPersonajeSaludable() {
-    	for(Personaje p : personajes) {
-    		if(p.estaVivo()) {
-    			return p;
-    		}
-    	}
-    	return null;
-    } 
-
+    private void haSidoDerrotado(Personaje objetivo) {
+    	this.personajes.remove(objetivo);
+    	System.out.println(objetivo.getNombre() + " ha sido eliminado del batallón.");
+    }
+    
+    private Personaje seleccionarObjetivo() {
+        List<Personaje> personajesSaludables = personajes.stream().filter(p -> p.puntosVida > 0).toList();
+        return personajesSaludables.get(new Random().nextInt(personajesSaludables.size()));
+    }
+    
     public boolean tienePersonajesSaludables() {
         return !personajes.isEmpty();
     }
