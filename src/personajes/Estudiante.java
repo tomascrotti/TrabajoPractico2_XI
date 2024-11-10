@@ -17,9 +17,14 @@ public class Estudiante extends Mago {
     
     private static ArrayList<Hechizo> generarHechizosIniciales() {
     	ArrayList<Hechizo> listaHechizos = new ArrayList<>();
-    	listaHechizos.add(HechizoFactory.obtenerHechizo("Avada kedavra"));
     	listaHechizos.add(HechizoFactory.obtenerHechizo("Sectumsempra"));
     	listaHechizos.add(HechizoFactory.obtenerHechizo("Protego"));
         return listaHechizos;
     }
+
+	@Override
+	public Hechizo decidirHechizo(Personaje objetivo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -6,7 +6,7 @@ import hechizos.Hechizo;
 import magosVsMortifagos.Dado;
 import magosVsMortifagos.Varita;
 
-public class Mago extends Personaje {
+public abstract class Mago extends Personaje {
 	public Mago(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
 		super(nombre, puntosVida, nivelDeMagia, hechizos, varita, dado);
 	}
@@ -23,5 +23,6 @@ public class Mago extends Personaje {
         	return;
         }
 		hechizo.ejecutar(this, objetivo);
-	}	
+	}
+	
 }

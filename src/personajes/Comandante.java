@@ -24,4 +24,9 @@ public class Comandante extends Mortifago {
         return listaHechizos;
     }
 
+	@Override
+	public Hechizo decidirHechizo(Personaje objetivo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

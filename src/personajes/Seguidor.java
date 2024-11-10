@@ -23,5 +23,12 @@ public class Seguidor extends Mortifago {
         listaHechizos.add(HechizoFactory.obtenerHechizo("Expelliarmus"));
         return listaHechizos;
     }
-    
+
+	@Override
+	public Hechizo decidirHechizo(Personaje objetivo) {
+		if(objetivo.pocaVida()) {
+			
+		}
+		return null;
+	}
 }

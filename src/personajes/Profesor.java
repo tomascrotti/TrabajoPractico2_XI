@@ -23,4 +23,10 @@ public class Profesor extends Mago {
         listaHechizos.add(HechizoFactory.obtenerHechizo("Avada kedavra"));        
         return listaHechizos;
     }
+
+	@Override
+	public Hechizo decidirHechizo(Personaje objetivo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

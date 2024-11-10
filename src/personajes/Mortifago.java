@@ -7,7 +7,7 @@ import hechizos.Hechizo;
 import magosVsMortifagos.Dado;
 import magosVsMortifagos.Varita;
 
-public class Mortifago extends Personaje {
+public abstract class Mortifago extends Personaje {
 
 	public Mortifago(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
 		super(nombre, puntosVida, nivelDeMagia, hechizos, varita, dado);

@@ -24,4 +24,10 @@ public class Auror extends Mago {
         listaHechizos.add(HechizoFactory.obtenerHechizo("Sectumsempra"));
         return listaHechizos;
     }
+
+	@Override
+	public Hechizo decidirHechizo(Personaje objetivo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -94,6 +94,13 @@ public abstract class Personaje {
         this.tieneVarita = true;
         System.out.println(nombre + " ha recuperado su varita y puede lanzar hechizos nuevamente.");
     }
+    
+    public abstract Hechizo decidirHechizo(Personaje objetivo);
+    
+    public boolean pocaVida() {
+    	return this.getVida() < this.puntosVidaMax * 0.4;
+    }
+    
 
 	@Override
 	public String toString() {
