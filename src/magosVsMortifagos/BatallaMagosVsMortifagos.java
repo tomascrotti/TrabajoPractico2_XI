@@ -13,6 +13,7 @@ public class BatallaMagosVsMortifagos {
 	    }
 
 	    Random rand = new Random();
+	    System.out.println("COMIENZA LA BATALLA ENTRE MAGOS Y MORTIFAGOS");
 	    while (batallonMagos.tienePersonajesSaludables() && batallonMortifagos.tienePersonajesSaludables()) {
 
 	      // los ataques pueden tener salidas por pantalla para mostrar lo que sucede

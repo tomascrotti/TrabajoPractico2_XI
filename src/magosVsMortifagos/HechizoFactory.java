@@ -2,17 +2,14 @@ package magosVsMortifagos;
 
 public class HechizoFactory {
 	
-	public Hechizo obtenerHechizo(String nombreHechizo) {
-        switch (nombreHechizo.toLowerCase()) {
-        case "expelliarmus":
-            return new Expelliarmus();
-        case "avada kedavra":
-            return new AvadaKedavra();
-        case "protego":
-            return new Protego();
-        // Más casos para otros hechizos
-        default:
-            throw new IllegalArgumentException("Tipo de hechizo desconocido: " + nombreHechizo);
-        }
+	public static Hechizo obtenerHechizo(String nombreHechizo) {
+        return switch (nombreHechizo.toLowerCase()) {
+        	case "expelliarmus" -> new Expelliarmus();
+        	case "avada kedavra" -> new AvadaKedavra();
+        	case "protego" -> new Protego();
+        	
+        	// 	OTROS HECHIZOS
+        	default -> throw new IllegalArgumentException("Tipo de hechizo desconocido: " + nombreHechizo);
+        };
     }	
 }

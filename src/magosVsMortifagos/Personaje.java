@@ -33,7 +33,7 @@ public abstract class Personaje {
     		return true;
     	return false;
     }
-    
+        
     public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
 
     public boolean lanzarDado() {
@@ -80,6 +80,14 @@ public abstract class Personaje {
         System.out.println(nombre + " ha recuperado su varita y puede lanzar hechizos nuevamente.");
     }
 
-	
+	@Override
+	public String toString() {
+		return nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax
+				+ "\n - Defensa: " + defensa
+				+ "\n - Hechizos Disponibles:\n" + hechizos
+				+ "\n - " + varita
+				+ "\n - Tiene Varita Disponible: " + (tieneVarita ? "Si" : "No")
+				+ "\n - " + dado;
+	}
     
 }

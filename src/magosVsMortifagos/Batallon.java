@@ -18,12 +18,21 @@ public class Batallon {
         this.registroHechizos = new HashMap<>();
         this.hechizosUtilizados = new HashSet<>();
     }
+    
+    public void listarPersonajes() {
+    	for(Personaje p : personajes) {
+    		System.out.println("\n" + p);
+    	}
+    }
 
     public void atacar(Batallon otroBatallon) {
     	for(Personaje atacante : personajes) {
     		Personaje objetivo = otroBatallon.obtenerPersonajeSaludable();
     		if(objetivo != null) {
     			atacante.lanzarHechizo(atacante.hechizos.get(0),objetivo);
+    			if(!objetivo.estaVivo()) {
+    				
+    			}
     			//HABRÍA QUE CAMBIAR QUE NO SOLO ATAQUE SINO QUE DECIDA
     			// Y ALGUNA MANERA DE AGREGARLE HECHIZOS AL ArrayList
     		}
@@ -37,8 +46,7 @@ public class Batallon {
     		}
     	}
     	return null;
-    }
-    
+    } 
 
     public boolean tienePersonajesSaludables() {
         return personajes.isEmpty();
