@@ -16,5 +16,10 @@ public class Mortifago extends Personaje {
             return;
         }
 		hechizo.ejecutar(this, objetivo);
+	}
+
+	@Override
+	protected void quitarVarita(Personaje objetivo) {
+				
 	}	
 }

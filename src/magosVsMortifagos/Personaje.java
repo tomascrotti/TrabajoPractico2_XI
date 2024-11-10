@@ -6,7 +6,6 @@ public abstract class Personaje {
     protected double puntosVidaMax;
     protected double puntosVida;
     protected int nivelDeMagia;
-    protected double defensa;
     protected ArrayList<Hechizo> hechizos;
     protected Varita varita;
     protected boolean tieneVarita = true;
@@ -17,7 +16,6 @@ public abstract class Personaje {
 		this.nombre = nombre;
 		this.puntosVida = puntosVidaMax = puntosVida;
 		this.nivelDeMagia = nivelDeMagia;
-		this.defensa = 1;
 		this.hechizos = hechizos;
 		this.varita = varita;
 		this.dado = dado;
@@ -39,20 +37,14 @@ public abstract class Personaje {
         
     public abstract void lanzarHechizo(Hechizo hechizo, Personaje objetivo);
 
-    public boolean lanzarDado() {
-    	int lanzamiento = this.dado.lanzar();
-    	if(lanzamiento == 1) {
-    		return true;
-    	} else {
-    		return false;
-    	}
-    		
+    public int lanzarDado() {
+    	return this.dado.lanzar();
     }
     
-    public double getDefensa() {
-    	return this.defensa;
+    protected void quitarVarita(Personaje objetivo) {
+    	
     }
-    
+
     public Varita getVarita() {
         return varita;
     }
@@ -61,18 +53,17 @@ public abstract class Personaje {
         this.varita = varita;
     }
         
-    public void reducirPuntosDeVida(double cantidad) {
-    	this.puntosVida -= cantidad;
-    }
-    
     public boolean tieneVarita() {
     	return tieneVarita;
     }
     
     public void setTieneVarita(boolean tieneVarita) {
-        this.tieneVarita = tieneVarita;
+    	this.tieneVarita = tieneVarita;
     }
-    
+ 
+    public void reducirPuntosDeVida(double cantidad) {
+    	this.puntosVida -= cantidad;
+    }
     public void recuperarVarita() {
         this.tieneVarita = true;
         System.out.println(nombre + " ha recuperado su varita y puede lanzar hechizos nuevamente.");
@@ -81,7 +72,6 @@ public abstract class Personaje {
 	@Override
 	public String toString() {
 		return "\n" + nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax
-				+ "\n - Defensa: " + defensa
 				+ "\n - Hechizos Disponibles:\n" + hechizos
 				+ "\n - " + varita
 				+ "\n - Tiene Varita Disponible: " + (tieneVarita ? "Si" : "No")
@@ -95,5 +85,4 @@ public abstract class Personaje {
 	public boolean tieneProtego() {
 		return this.protegido;
 	}
-    
 }
