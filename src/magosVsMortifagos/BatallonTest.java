@@ -12,8 +12,13 @@ public class BatallonTest {
 
 	@BeforeEach
 	void setup() {
-		BatallaMagosVsMortifagos batalla = new BatallaMagosVsMortifagos();
-		batalla.iniciarBatalla();
+		batallonMagos = new Batallon();
+		batallonMortifagos = new Batallon();
+
+		for (int i = 0; i < 3; i++) {
+			batallonMagos.agregarPersonaje(PersonajeFactory.crearMago());
+			batallonMortifagos.agregarPersonaje(PersonajeFactory.crearMortifago());
+		}
 	}
 
 	@Test
@@ -48,6 +53,8 @@ public class BatallonTest {
 
 	@Test
 	void testBatallaCompleta() {
+		BatallaMagosVsMortifagos batalla = new BatallaMagosVsMortifagos();
+		batalla.iniciarBatalla(batallonMagos, batallonMortifagos);
 
 		assertTrue(batallonMagos.tienePersonajesSaludables() != batallonMortifagos.tienePersonajesSaludables(),
 				"La batalla debería terminar con un equipo vencedor y otro derrotado");

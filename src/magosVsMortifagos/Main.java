@@ -17,6 +17,15 @@ public class Main {
 				         + "██      ██  ██████  ██   ██    ██    ██ ██      ██   ██  ██████   ██████  ███████\r\n"
 				         + "                                                                                     ");
 		BatallaMagosVsMortifagos batalla = new BatallaMagosVsMortifagos();
-		batalla.iniciarBatalla();
+		Batallon batallonMagos = new Batallon();
+		Batallon batallonMortifagos = new Batallon();
+		
+		
+
+		for (int i = 0; i < 3; i++) {
+			batallonMagos.agregarPersonaje(PersonajeFactory.crearMago());
+			batallonMortifagos.agregarPersonaje(PersonajeFactory.crearMortifago());
+		}
+		batalla.iniciarBatalla(batallonMagos,batallonMortifagos);
 	}
 }
