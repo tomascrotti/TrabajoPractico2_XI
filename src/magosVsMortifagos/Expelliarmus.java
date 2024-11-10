@@ -20,7 +20,7 @@ public class Expelliarmus implements Hechizo {
 	}
 	
 	public String toString() {
-		return "Expelliarmus - Desarma al Hechicero que recibe el ataque\n";
+		return nombre + " - Desarma al Hechicero que recibe el ataque\n";
 	}
 	
 }

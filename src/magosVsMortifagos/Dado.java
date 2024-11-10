@@ -15,7 +15,7 @@ public enum Dado {
 	}
 	
 	public int lanzar() {
-		return random.nextInt(caras) + 1;
+		return random.nextInt(caras);
 	}
 	
 	 @Override

@@ -3,13 +3,16 @@ package magosVsMortifagos;
 public class Protego implements Hechizo {
 	
 	private String nombre = "Protego";
+	private int duracion;
 	
 	@Override
 	public void ejecutar(Personaje lanzador, Personaje objetivo) {
-		System.out.println("Puntos de defensa actuales: " + objetivo.getDefensa());
-		double nuevaDefensa = -lanzador.getVarita().multDefe;
-		objetivo.aumentarDefensa(nuevaDefensa);
-		System.out.println("Puntos de defensa nuevos: " + objetivo.getDefensa());
+		if(!objetivo.tieneProtego()) {
+			objetivo.setProtegido(true);
+			System.out.println(objetivo.getNombre() + " ha sido protegido por Protego\n");
+		} else {
+			System.out.println(objetivo.getNombre() + " ya esta protegido con Protego\n");
+		}
 	}
 
 	public String getNombre() {
@@ -18,6 +21,6 @@ public class Protego implements Hechizo {
 	
 	@Override
 	public String toString() {
-		return "Protego - Aumenta la defensa\n";
+		return nombre + " - Crea un escudo protector invisible que desvía hechizos o ataques.\n";
 	}
 }

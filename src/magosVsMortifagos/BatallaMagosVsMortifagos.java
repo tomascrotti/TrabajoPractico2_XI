@@ -23,7 +23,6 @@ public class BatallaMagosVsMortifagos {
 	    
 	    while (batallonMagos.tienePersonajesSaludables() && batallonMortifagos.tienePersonajesSaludables()) {
 
-	      // los ataques pueden tener salidas por pantalla para mostrar lo que sucede
 	      if (rand.nextBoolean()) {
 	        batallonMagos.atacar(batallonMortifagos);
 	        if (batallonMortifagos.tienePersonajesSaludables()) {

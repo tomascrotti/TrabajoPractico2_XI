@@ -1,9 +1,9 @@
 package magosVsMortifagos;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Mago extends Personaje {
-	public Mago(String nombre, double puntosVida, int nivelDeMagia, List<Hechizo> hechizos, Varita varita, Dado dado) {
+	public Mago(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
 		super(nombre, puntosVida, nivelDeMagia, hechizos, varita, dado);
 	}
 

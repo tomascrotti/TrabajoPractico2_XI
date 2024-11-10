@@ -1,19 +1,19 @@
 package magosVsMortifagos;
 
-import java.util.List;
-
+import java.util.ArrayList;
 public abstract class Personaje {
     protected String nombre;
     protected double puntosVidaMax;
     protected double puntosVida;
     protected int nivelDeMagia;
     protected double defensa;
-    protected List<Hechizo> hechizos;
+    protected ArrayList<Hechizo> hechizos;
     protected Varita varita;
     protected boolean tieneVarita = true;
+    protected boolean protegido = false;
     protected Dado dado;
     
-    public Personaje(String nombre, double puntosVida, int nivelDeMagia, List<Hechizo> hechizos, Varita varita, Dado dado) {
+    public Personaje(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
 		this.nombre = nombre;
 		this.puntosVida = puntosVidaMax = puntosVida;
 		this.nivelDeMagia = nivelDeMagia;
@@ -53,10 +53,6 @@ public abstract class Personaje {
     	return this.defensa;
     }
     
-    public void aumentarDefensa(double armadura) {
-    	this.defensa += armadura;
-    }
-    
     public Varita getVarita() {
         return varita;
     }
@@ -90,6 +86,14 @@ public abstract class Personaje {
 				+ "\n - " + varita
 				+ "\n - Tiene Varita Disponible: " + (tieneVarita ? "Si" : "No")
 				+ "\n - " + dado;
+	}
+
+	public void setProtegido(boolean b) {
+		this.protegido = b;
+	}
+
+	public boolean tieneProtego() {
+		return this.protegido;
 	}
     
 }

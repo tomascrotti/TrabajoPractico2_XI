@@ -11,7 +11,7 @@ import java.util.Set;
 public class Batallon {
 
     private List<Personaje> personajes;
-    private Map<Personaje, List<Hechizo>> registroHechizos;
+    private Map<Personaje, ArrayList<Hechizo>> registroHechizos;
     private Set<Hechizo> hechizosUtilizados;
 
     public Batallon() {
