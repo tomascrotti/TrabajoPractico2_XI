@@ -5,6 +5,12 @@ import personajes.Personaje;
 import personajes.PersonajeFactory;
 
 public class BatallonMortifagos extends Batallon {
+	
+	public BatallonMortifagos(int cantidad) {
+		super("MORTIFAGOS");
+		generarBatallon(cantidad);
+	}
+
 	@Override
 	public void agregarPersonaje(Personaje p) {
         if (p instanceof Mortifago) {

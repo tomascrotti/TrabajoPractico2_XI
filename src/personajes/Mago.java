@@ -14,11 +14,14 @@ public class Mago extends Personaje {
 	@Override
 	public void lanzarHechizo(Hechizo hechizo, Personaje objetivo) {
         if (!tieneVarita()) {
-            System.out.println(nombre + " no puede lanzar hechizos porque no tiene su varita.");
-            this.setTieneVarita(true);
+            System.out.println(nombre + " no puede lanzar hechizos porque no tiene su varita.\n");
             return;
         }
-		System.out.println("\n ---- \n" + this.getNombre() + " ha lanzado " + hechizo.getNombre());
+        System.out.println("\n ---- \n" + this.getNombre() + " ha lanzado " + hechizo.getNombre() + " a " + objetivo.getNombre());
+        if(objetivo.tieneProtego()) {
+        	objetivo.setProtegido(false);
+        	return;
+        }
 		hechizo.ejecutar(this, objetivo);
 	}	
 }

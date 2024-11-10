@@ -1,10 +1,14 @@
 package personajes;
 
 import java.util.ArrayList;
-
 import hechizos.Hechizo;
 import magosVsMortifagos.Dado;
+import magosVsMortifagos.EstrategiaProlog;
 import magosVsMortifagos.Varita;
+
+
+
+
 public abstract class Personaje {
     protected String nombre;
     protected double puntosVidaMax;
@@ -14,6 +18,7 @@ public abstract class Personaje {
     protected Varita varita;
     protected boolean tieneVarita = true;
     protected boolean protegido = false;
+    protected EstrategiaProlog estrategia;
     protected Dado dado;
     
     public Personaje(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
@@ -22,6 +27,7 @@ public abstract class Personaje {
 		this.nivelDeMagia = nivelDeMagia;
 		this.hechizos = hechizos;
 		this.varita = varita;
+		this.estrategia = new EstrategiaProlog();
 		this.dado = dado;
     }
     
@@ -61,18 +67,24 @@ public abstract class Personaje {
     public void setVarita(Varita varita) {
         this.varita = varita;
     }
+    
+    public void cambiarVarita(Personaje objetivo) {
+    	if(estrategia.ejecutarConsulta(this.getNombre(), objetivo.getNombre())) {
+    		this.setVarita(objetivo.getVarita());
+    	}
+    }
         
     public boolean tieneVarita() {
     	return tieneVarita;
     }
     
     public void setTieneVarita(boolean tieneVarita) {
-    	if(this.tieneVarita()) {
-    		System.out.println(this.getNombre() + "ha perdido su varita");
-    	} else {
-    		System.out.println(this.getNombre() + "ha recuperado su varita");
-    	}    	
     	this.tieneVarita = tieneVarita;
+    	if(!this.tieneVarita()) {
+    		System.out.println(this.getNombre() + " ha perdido su varita");
+    	} else {
+    		System.out.println(this.getNombre() + " ha recuperado su varita");
+    	}    	
     }
  
     public void reducirPuntosDeVida(double cantidad) {
@@ -85,18 +97,24 @@ public abstract class Personaje {
 
 	@Override
 	public String toString() {
-		return "\n" + nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax
+		return nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax
 				+ "\n - Hechizos Disponibles:\n" + hechizos
 				+ "\n - " + varita
 				+ "\n - Tiene Varita Disponible: " + (tieneVarita ? "Si" : "No")
-				+ "\n - " + dado;
+				+ "\n - " + dado + "\n";
 	}
 
 	public void setProtegido(boolean b) {
 		this.protegido = b;
+    	if(!this.tieneProtego()) {
+    		System.out.println(this.getNombre() + " ha perdido Protego");
+    	} else {
+    		System.out.println(this.getNombre() + " es protegido por Protego");
+    	}    
 	}
 
 	public boolean tieneProtego() {
 		return this.protegido;
 	}
+
 }

@@ -16,11 +16,18 @@ public abstract class Batallon {
     protected List<Personaje> personajes;
     private Map<Personaje, ArrayList<Hechizo>> registroHechizos;
     private Set<Hechizo> hechizosUtilizados;
+    
+    private String nombre;
 
-    public Batallon() {
+    public Batallon(String nombre) {
+    	this.nombre = nombre;
         this.personajes = new ArrayList<>();
         this.registroHechizos = new HashMap<>();
         this.hechizosUtilizados = new HashSet<>();
+    }
+    
+    public String getNombre() {
+    	return this.nombre;
     }
     
     public abstract void generarBatallon(int cantidad);
@@ -33,17 +40,29 @@ public abstract class Batallon {
     	}
     }
 
-    public void atacar(Batallon otroBatallon) {
+    public void decidirAtaques() {
     	for(Personaje atacante : personajes) {
-    		Personaje objetivo = otroBatallon.seleccionarObjetivo();
-    		if(objetivo != null) {
-    			atacante.lanzarHechizo(atacante.getHechizos().get(0),objetivo);
-    			if(!objetivo.estaVivo()) {
-    				otroBatallon.haSidoDerrotado(objetivo);
+    		this.registroHechizos = 
+    	}
+    }
+    
+    public void atacar(Batallon otroBatallon) {
+    	this.decidirAtaques();
+    	for(Personaje atacante : personajes) {
+    		if(atacante.tieneVarita()) {			
+    			Personaje objetivo = otroBatallon.seleccionarObjetivo();
+    			if(objetivo != null) {
+    				atacante.decidirAtaque();
+    				if(!objetivo.estaVivo()) {
+    					atacante.cambiarVarita(objetivo);
+    					otroBatallon.haSidoDerrotado(objetivo);
+    				}
+    				// HABRÍA QUE CAMBIAR QUE NO SOLO ATAQUE SINO QUE DECIDA
+    				// CON PROLOG
     			}
-    			// HABRÍA QUE CAMBIAR QUE NO SOLO ATAQUE SINO QUE DECIDA
-    			// CON PROLOG
-    		}
+	    	} else {
+	    		atacante.setTieneVarita(true);
+	    	}
     	}
     }
     

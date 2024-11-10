@@ -17,10 +17,9 @@ public class Estudiante extends Mago {
     
     private static ArrayList<Hechizo> generarHechizosIniciales() {
     	ArrayList<Hechizo> listaHechizos = new ArrayList<>();
-        listaHechizos.add(HechizoFactory.obtenerHechizo("avada kedavra"));
-        listaHechizos.add(HechizoFactory.obtenerHechizo("expelliarmus"));
-        listaHechizos.add(HechizoFactory.obtenerHechizo("protego"));
-        
+    	listaHechizos.add(HechizoFactory.obtenerHechizo("Avada kedavra"));
+    	listaHechizos.add(HechizoFactory.obtenerHechizo("Sectumsempra"));
+    	listaHechizos.add(HechizoFactory.obtenerHechizo("Protego"));
         return listaHechizos;
     }
 }

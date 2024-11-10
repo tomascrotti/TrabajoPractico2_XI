@@ -10,7 +10,6 @@ public class Protego implements Hechizo {
 	public void ejecutar(Personaje lanzador, Personaje objetivo) {
 		if(!objetivo.tieneProtego()) {
 			objetivo.setProtegido(true);
-			System.out.println(objetivo.getNombre() + " ha sido protegido por Protego\n");
 		} else {
 			System.out.println(objetivo.getNombre() + " ya esta protegido con Protego\n");
 		}

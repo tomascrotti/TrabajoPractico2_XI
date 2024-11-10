@@ -13,15 +13,14 @@ public class Profesor extends Mago {
 	private static ArrayList<Hechizo> hechizos = generarHechizosIniciales();
 
     public Profesor(String nombre) {
-        super(nombre, 100, 3, hechizos, Varita.PROFESIONAL, Dado.CUATROCARAS);
+        super(nombre, 100, 3, hechizos, Varita.EXPERTO, Dado.CUATROCARAS);
     }
 
     private static ArrayList<Hechizo> generarHechizosIniciales() {
     	ArrayList<Hechizo> listaHechizos = new ArrayList<>();
-        listaHechizos.add(HechizoFactory.obtenerHechizo("protego"));
-        listaHechizos.add(HechizoFactory.obtenerHechizo("expelliarmus"));
-        listaHechizos.add(HechizoFactory.obtenerHechizo("avada kedavra"));
-        
+    	listaHechizos.add(HechizoFactory.obtenerHechizo("Expelliarmus"));
+        listaHechizos.add(HechizoFactory.obtenerHechizo("Protego"));
+        listaHechizos.add(HechizoFactory.obtenerHechizo("Avada kedavra"));        
         return listaHechizos;
     }
 }

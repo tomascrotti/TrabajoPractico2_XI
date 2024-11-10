@@ -6,6 +6,11 @@ import personajes.PersonajeFactory;
 
 public class BatallonMagos extends Batallon {
 	
+	public BatallonMagos(int cantidad) {
+		super("MAGOS");
+		generarBatallon(cantidad);
+	}
+
 	@Override
 	public void agregarPersonaje(Personaje p) {
         if (p instanceof Mago) {

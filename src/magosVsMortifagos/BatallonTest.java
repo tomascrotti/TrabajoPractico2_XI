@@ -15,19 +15,20 @@ public class BatallonTest {
 
 	Batallon batallonMagos;
 	Batallon batallonMortifagos;
-
+	int cantMagos;
+	int cantMortifagos;
 	@BeforeEach
 	void setup() {
-		batallonMagos = new BatallonMagos();
-		batallonMortifagos = new BatallonMortifagos();
-		batallonMagos.generarBatallon(3);
-		batallonMortifagos.generarBatallon(1);
+		batallonMagos = new BatallonMagos(3);
+		batallonMortifagos = new BatallonMortifagos(3);
+		cantMagos = batallonMagos.getPersonajes().size();
+		cantMortifagos = batallonMortifagos.getPersonajes().size();
 	}
 
 	@Test
 	void testBatallonInicializacion() {
-		assertEquals(3, batallonMagos.getPersonajes().size(), "El batallón de magos debería tener 3 personajes");
-		assertEquals(3, batallonMortifagos.getPersonajes().size(),
+		assertEquals(3, cantMagos, "El batallón de magos debería tener 3 personajes");
+		assertEquals(3, cantMortifagos,
 				"El batallón de mortífagos debería tener 3 personajes");
 	}
 
