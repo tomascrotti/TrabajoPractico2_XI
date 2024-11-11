@@ -21,16 +21,18 @@ public abstract class Personaje {
     protected EstrategiaProlog estrategia;
     protected Dado dado;
     
-    public Personaje(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
+    public Personaje(String nombre, double puntosVida, int nivelDeMagia, Varita varita, Dado dado) {
 		this.nombre = nombre;
 		this.puntosVida = puntosVidaMax = puntosVida;
 		this.nivelDeMagia = nivelDeMagia;
-		this.hechizos = hechizos;
+		this.hechizos = generarHechizosIniciales();
 		this.varita = varita;
 		this.estrategia = new EstrategiaProlog();
 		this.dado = dado;
     }
     
+	protected abstract ArrayList<Hechizo> generarHechizosIniciales();
+
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -101,7 +103,6 @@ public abstract class Personaje {
     	return this.getVida() < this.puntosVidaMax * 0.4;
     }
     
-
 	@Override
 	public String toString() {
 		return nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax

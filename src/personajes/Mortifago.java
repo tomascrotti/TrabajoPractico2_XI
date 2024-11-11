@@ -1,16 +1,13 @@
 package personajes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import hechizos.Hechizo;
 import magosVsMortifagos.Dado;
 import magosVsMortifagos.Varita;
 
 public abstract class Mortifago extends Personaje {
 
-	public Mortifago(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
-		super(nombre, puntosVida, nivelDeMagia, hechizos, varita, dado);
+	public Mortifago(String nombre, double puntosVida, int nivelDeMagia, Varita varita, Dado dado) {
+		super(nombre, puntosVida, nivelDeMagia, varita, dado);
 	}
 
 	@Override

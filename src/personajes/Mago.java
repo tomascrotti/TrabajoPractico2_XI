@@ -1,14 +1,12 @@
 package personajes;
 
-import java.util.ArrayList;
-
 import hechizos.Hechizo;
 import magosVsMortifagos.Dado;
 import magosVsMortifagos.Varita;
 
 public abstract class Mago extends Personaje {
-	public Mago(String nombre, double puntosVida, int nivelDeMagia, ArrayList<Hechizo> hechizos, Varita varita, Dado dado) {
-		super(nombre, puntosVida, nivelDeMagia, hechizos, varita, dado);
+	public Mago(String nombre, double puntosVida, int nivelDeMagia, Varita varita, Dado dado) {
+		super(nombre, puntosVida, nivelDeMagia, varita, dado);
 	}
 
 	@Override
@@ -24,5 +22,4 @@ public abstract class Mago extends Personaje {
         }
 		hechizo.ejecutar(this, objetivo);
 	}
-	
 }

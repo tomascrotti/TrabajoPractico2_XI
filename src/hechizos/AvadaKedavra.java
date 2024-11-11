@@ -11,7 +11,7 @@ public class AvadaKedavra implements Hechizo {
         objetivo.reducirPuntosDeVida(objetivo.getVida());
 		System.out.println(objetivo.getNombre() + " ha sido derrotado por " + lanzador.getNombre());
     }
-
+	
 	public String getNombre() {
 		// TODO Auto-generated method stub
 		return nombre;
