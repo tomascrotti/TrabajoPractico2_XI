@@ -9,6 +9,7 @@ public class Sectumsempra implements Hechizo{
 	
 	@Override
     public void ejecutar(Personaje lanzador, Personaje objetivo) {
+		System.out.println(" a " + objetivo.getNombre());
 		if(objetivo.tieneProtego()) {
 			System.out.println(objetivo.getNombre() + " tenia protego y ha desviado el ataque.\n");
 			objetivo.setProtegido(false);

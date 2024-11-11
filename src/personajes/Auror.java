@@ -30,11 +30,16 @@ public class Auror extends Mago {
 		double probabilidad = rand.nextDouble();
 		if (objetivo.tieneProtego() && this.tieneProtego()) {
 			hechizoSeleccionado = this.hechizos.get(1);
-		} else if (this.tieneProtego() && probabilidad < 0.20) {
+		} else if (!this.pocaVida() && probabilidad < 0.20) {
 			hechizoSeleccionado = this.hechizos.get(3);
+		} else if (objetivo.tieneVarita()){
+			hechizoSeleccionado = this.hechizos.get(2);			
+		} else if (this.pocaVida()) {
+			hechizoSeleccionado = this.hechizos.get(0);
 		} else {
-			hechizoSeleccionado = this.hechizos.get(1);			
+			hechizoSeleccionado = this.hechizos.get(rand.nextInt(4));
 		}
+			
 		return hechizoSeleccionado;			
 	}
 }

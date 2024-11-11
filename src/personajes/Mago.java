@@ -15,7 +15,7 @@ public abstract class Mago extends Personaje {
             System.out.println(nombre + " no puede lanzar hechizos porque no tiene su varita.\n");
             return;
         }
-        System.out.println("\n ---- \n" + this.getNombre() + " ha lanzado " + hechizo.getNombre() + " a " + objetivo.getNombre());
+        System.out.println("\n ---- \n" + this.getNombre() + " ha lanzado " + hechizo.getNombre());
         if(objetivo.tieneProtego()) {
         	objetivo.setProtegido(false);
         	return;

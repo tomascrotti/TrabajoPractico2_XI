@@ -17,8 +17,8 @@ public class Main {
 //				         + "██      ██  ██████  ██   ██    ██    ██ ██      ██   ██  ██████   ██████  ███████\r\n"
 //				         + "                                                                                     ");
 		BatallaMagosVsMortifagos batalla = new BatallaMagosVsMortifagos();
-		Batallon batallonMagos = new BatallonMagos(1);
-		Batallon batallonMortifagos = new BatallonMortifagos(1);
+		Batallon batallonMagos = new BatallonMagos(2);
+		Batallon batallonMortifagos = new BatallonMortifagos(2);
 		
 		batalla.iniciarBatalla(batallonMagos, batallonMortifagos);
 	}

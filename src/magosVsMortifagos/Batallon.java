@@ -18,11 +18,11 @@ public abstract class Batallon {
     protected List<Personaje> personajes;
     private Map<Personaje, Accion> registroHechizos;
         
-    public void decidirAtaques() {
+    public void decidirAtaques(Batallon otroBatallon) {
     	registroHechizos.clear();
     	for (Personaje atacante : personajes) {
             
-            Personaje objetivo = seleccionarObjetivo();
+            Personaje objetivo = otroBatallon.seleccionarObjetivo();
             if (objetivo != null) {
                 Hechizo hechizo = atacante.decidirHechizo(objetivo);
                 if (hechizo != null) {
@@ -52,7 +52,7 @@ public abstract class Batallon {
     	}
     }
     public void atacar(Batallon otroBatallon) {
-    	this.decidirAtaques();
+    	this.decidirAtaques(otroBatallon);
     	for(Personaje atacante : personajes) {
     		if(atacante.tieneVarita()) {
     			Personaje objetivo = registroHechizos.get(atacante).getObjetivo(); 

@@ -16,7 +16,7 @@ public abstract class Mortifago extends Personaje {
             System.out.println(nombre + " no puede lanzar hechizos porque no tiene su varita.");
             return;
         }
-        System.out.println("\n ---- \n" + this.getNombre() + " ha lanzado " + hechizo.getNombre() + " a " + objetivo.getNombre());
+        System.out.println("\n ---- \n" + this.getNombre() + " ha lanzado " + hechizo.getNombre());
 		hechizo.ejecutar(this, objetivo);
 	}
 }

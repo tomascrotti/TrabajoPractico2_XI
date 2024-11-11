@@ -7,6 +7,7 @@ public class Expelliarmus implements Hechizo {
 	private String nombre = "Expelliarmus";
 	
     public void ejecutar(Personaje lanzador, Personaje objetivo) {
+    	System.out.println(" a " + objetivo.getNombre());
         if(objetivo.tieneVarita()) {
         	lanzador.quitarVarita(objetivo);
         } else {

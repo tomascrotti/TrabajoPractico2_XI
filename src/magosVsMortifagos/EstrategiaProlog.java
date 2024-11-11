@@ -24,8 +24,6 @@ public class EstrategiaProlog {
             if (queryMejorVarita.hasSolution()) {
                 System.out.println(vencedor + " se ha quedado con la varita de " + vencido);
                 return true;
-            } else {
-            	System.out.println("\nNo\n");
             }
             return false;
         } catch (Exception e) {

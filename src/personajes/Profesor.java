@@ -29,12 +29,14 @@ public class Profesor extends Mago {
 		Hechizo hechizoSeleccionado = null;
 		Random rand = new Random();
 		double probabilidad = rand.nextDouble();
-		if (objetivo.pocaVida() || probabilidad < 0.2) {
+		if (objetivo.pocaVida()) {
 			hechizoSeleccionado = this.hechizos.get(1);
 		} else if (objetivo.tieneVarita() && probabilidad < 0.6) {
 			hechizoSeleccionado = this.hechizos.get(2);
 		} else if(!this.tieneProtego()){
 			hechizoSeleccionado = this.hechizos.get(rand.nextInt(3));			
+		} else {
+			hechizoSeleccionado = this.hechizos.get(1);
 		}
 		return hechizoSeleccionado;			
 	}

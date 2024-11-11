@@ -27,13 +27,10 @@ public class Estudiante extends Mago {
 	@Override
 	public Hechizo decidirHechizo(Personaje objetivo) {
 		Hechizo hechizoSeleccionado = null;
-		Random rand = new Random();
 		if (!this.tieneProtego()) {
 			hechizoSeleccionado = hechizos.get(0);
-		} else if (objetivo.pocaVida()) {
-			hechizoSeleccionado = hechizos.get(1);
 		} else {
-			hechizoSeleccionado = hechizos.get(rand.nextInt(2));
+			hechizoSeleccionado = hechizos.get(1);
 		}
 		return hechizoSeleccionado;
 	}

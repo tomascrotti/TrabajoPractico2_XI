@@ -108,7 +108,8 @@ public abstract class Personaje {
 		return nombre + ":\n - PS: " + puntosVida + " | " + puntosVidaMax
 				+ "\n - Hechizos Disponibles:\n" + hechizos
 				+ "\n - " + varita
-				+ "\n - Tiene Varita Disponible: " + (tieneVarita ? "Si" : "No")
+				+ "\n - Tiene Varita Disponible: " + (tieneVarita() ? "Si" : "No")
+				+ "\n - Tiene Protego: " + (tieneProtego() ? "Si" : "No")
 				+ "\n - " + dado + "\n";
 	}
 

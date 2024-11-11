@@ -8,6 +8,7 @@ public class AvadaKedavra implements Hechizo {
 	
 	@Override
     public void ejecutar(Personaje lanzador, Personaje objetivo) {
+		System.out.println(" a " + objetivo.getNombre());
         objetivo.reducirPuntosDeVida(objetivo.getVida());
 		System.out.println(objetivo.getNombre() + " ha sido derrotado por " + lanzador.getNombre());
     }

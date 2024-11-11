@@ -29,6 +29,7 @@ public class Comandante extends Mortifago {
 		Hechizo hechizoSeleccionado;
 		Random rand = new Random();
 		double probabilidad = rand.nextDouble();
+		
 		if (probabilidad < 0.1)
 			hechizoSeleccionado = this.hechizos.get(3);
 		if (!this.tieneProtego() && this.pocaVida()) {
