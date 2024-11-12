@@ -12,7 +12,7 @@ import magosVsMortifagos.Varita;
 public class Seguidor extends Mortifago {
 	
 	public Seguidor(String nombre){
-        super(nombre, 75, 1, Varita.PROFESIONAL, Dado.SEISCARAS);
+        super(nombre, 75, 2, Varita.PROFESIONAL, Dado.SEISCARAS);
     }
 
 	@Override

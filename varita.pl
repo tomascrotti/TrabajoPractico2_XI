@@ -1,8 +1,8 @@
-nivel_de_magia(auror, 90).
-nivel_de_magia(profesor, 60).
-nivel_de_magia(estudiante, 50).
-nivel_de_magia(comandante, 80).
-nivel_de_magia(seguidor, 70).
+nivel_de_magia(auror, 4).
+nivel_de_magia(profesor, 3).
+nivel_de_magia(estudiante, 1).
+nivel_de_magia(comandante, 3).
+nivel_de_magia(seguidor, 2).
 
 mago_tiene_varita(auror, sauco).
 mago_tiene_varita(profesor, roble_oscuro).
