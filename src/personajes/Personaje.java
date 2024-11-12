@@ -90,7 +90,11 @@ public abstract class Personaje {
     }
  
     public void reducirPuntosDeVida(double cantidad) {
-    	this.puntosVida -= cantidad;
+    	if(cantidad > this.puntosVida) {
+    		puntosVida = 0;
+    	}
+    	else 
+    		this.puntosVida -= cantidad;
     }
     public void recuperarVarita() {
         this.tieneVarita = true;

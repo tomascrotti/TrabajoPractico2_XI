@@ -73,9 +73,11 @@ class PersonajeTest {
 
 	@Test
 	void testReducirPuntosDeVida() {
-		assertEquals(125,mago.getVida());
-		mago.reducirPuntosDeVida(25);
-		assertEquals(100,mago.getVida());
+	    assertEquals(125, mago.getVida());
+	    mago.reducirPuntosDeVida(25);
+	    assertEquals(100, mago.getVida());
+	    mago.reducirPuntosDeVida(200); // Más de la vida actual
+	    assertEquals(0, mago.getVida()); // Verifica que no quede negativo
 	}
 
 	@Test
