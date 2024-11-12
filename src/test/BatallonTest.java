@@ -1,4 +1,4 @@
-package magosVsMortifagos;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +7,10 @@ import org.junit.jupiter.api.Test;
 import hechizos.AvadaKedavra;
 import hechizos.Hechizo;
 import hechizos.HechizoFactory;
+import magosVsMortifagos.BatallaMagosVsMortifagos;
+import magosVsMortifagos.Batallon;
+import magosVsMortifagos.BatallonMagos;
+import magosVsMortifagos.BatallonMortifagos;
 import personajes.Personaje;
 
 import java.util.List;
