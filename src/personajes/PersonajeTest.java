@@ -89,11 +89,11 @@ class PersonajeTest {
 
 	@Test
 	void testPocaVida() {
-		assertFalse(mago.pocaVida());
-		mago.reducirPuntosDeVida(100);
-		mago.pocaVida();
-		assertTrue(mago.pocaVida());
+	    assertFalse(mago.pocaVida());
+	    mago.reducirPuntosDeVida(100);
+	    assertTrue(mago.pocaVida());
 	}
+	
 	@Test
 	void testSetProtegido() {
 		mago.setProtegido(true);
