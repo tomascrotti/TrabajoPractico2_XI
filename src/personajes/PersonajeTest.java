@@ -9,12 +9,10 @@ import magosVsMortifagos.Varita;
 
 class PersonajeTest {
 	Mago mago;
-	Mortifago mortifago;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		mago = new Auror("Auror");
-		mortifago = new Seguidor("Seguidor");
 	}
 
 
