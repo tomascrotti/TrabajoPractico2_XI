@@ -58,11 +58,6 @@ class PersonajeTest {
 		assertEquals(Varita.PRINCIPIANTE,mago.getVarita(),"La varita del mago ahora deberia ser de PRINCIPIANTE");
 	}
 
-	/*@Test
-	 * void testCambiarVarita() {
-		mago.cambiarVarita(mortifago);
-	}*/
-
 	@Test
 	void testTieneVarita() {
 		assertTrue(mago.tieneVarita(),"El mago deberia tener varita");
@@ -104,14 +99,14 @@ class PersonajeTest {
 	@Test
 	void testSetProtegido() {
 		mago.setProtegido(true);
-		assertTrue(mago.tieneProtego());
+		assertTrue(mago.tieneProtego(),"El mago deberia tener Protego");
 	}
 
 	@Test
 	void testTieneProtego() {
-		assertFalse(mago.tieneProtego());
+		assertFalse(mago.tieneProtego(),"El mago no deberia tener protego");
 		mago.setProtegido(true);
-		assertTrue(mago.tieneProtego());
+		assertTrue(mago.tieneProtego(),"El mago deberia tener protego");
 	}
 
 }
